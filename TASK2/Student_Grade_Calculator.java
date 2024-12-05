@@ -23,22 +23,25 @@ public class Student_Grade_Calculator {
         //total marks obtained
         float total_marks = 0.0f;
 
-        //this part of the code can be done better
+        //Marks entry
         System.out.println("Enter the marks for each subject one by one");
         float[] marks = new float[6]; //initializing a marks array
         for (int i=0;i<6;i++){
-            marks[i] = cred.nextFloat();
-            total_marks+=marks[i];
+            marks[i] = cred.nextFloat(); //storing in marks array
+            total_marks+=marks[i]; //summing total marks
         }
         System.out.println("\nProcessing Grades...\n");
         System.out.println("\t\tSTUDENT GRADE CALCULATOR\nName: "+name+ "\t\tRoll no: "+roll_no);
 
         //average percentage scored
         float percentage = total_marks/6.0f;
-        String grade = getString(percentage);
+        String grade = getString(percentage); // calling grade method to get student's grade
+        //results
         System.out.println("\nSemester GPA: "+grade+"\nTotal marks obtained: "+total_marks+"\nAverage Percentage: "+percentage);
+        //grading scale displayed for reference
         System.out.println("\nGrading Scale:\n\tA  = 85.0-100.0\n\tA- = 80.0-84.99\n\tB+ = 75.0-79.99\n\tB  = 70.0-74.99\n\tB- = 65.0-69.99\n\tC+ = 61.0-64.99\n\tC  = 58.0-60.99\n\tC- = 55.0-57.99\n\tD  = 50.0-54.99\n\tF  = 0.0-49.99");
     }
+    //grading if-else method
     private static String getString(float percentage) {
         String grade;
         if (percentage >=85.0f){ grade  = "A";
